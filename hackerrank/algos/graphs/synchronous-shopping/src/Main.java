@@ -3,6 +3,11 @@ import java.util.*;
 
 public class Main {
 
+  /**
+   *  Status: AC
+   *
+   *  Topics: DP, masks, shortest path, graph, priority queue.
+   */
   public static void main(String[] args) throws FileNotFoundException {
     InputStream inputStream = System.in;
     OutputStream outputStream = System.out;
@@ -61,34 +66,6 @@ public class Main {
     }
   }
 
-  static class CityAndMask {
-    public int v, mask;
-    public CityAndMask(int v, int mask) {
-      this.v = v;
-      this.mask = mask;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-      if (o == this) return true;
-      if (!(o instanceof CityAndMask)) {
-        return false;
-      }
-      CityAndMask cityAndMask = (CityAndMask)o;
-      return (this.v == cityAndMask.v) && (this.mask == cityAndMask.mask);
-    }
-
-    @Override
-    public int hashCode() {
-      return Objects.hash(v, mask);
-    }
-
-    @Override
-    public String toString() {
-      return "v:" + v + " mask:" + mask;
-    }
-  }
-
   static class Task_v2 {
     int n, m, k;
 
@@ -96,7 +73,6 @@ public class Main {
     int[] T;
     int[] masks;
     List<Edge>[] g;
-    HashMap<CityAndMask, Integer> bestTime = new HashMap<>();
     int[][] dp;
     boolean[][] vst;
 
